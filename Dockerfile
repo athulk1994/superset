@@ -25,7 +25,7 @@ ENV LANG=C.UTF-8 \
 # Run as superset user
 WORKDIR /home/superset
 COPY superset .
-RUN addgroup superset && \
+CMD addgroup superset && \
     adduser -h /home/superset -G superset -D superset && \
     chown -R superset:superset /home/superset
 USER superset
